@@ -1,0 +1,40 @@
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+
+    const inputs = document.querySelectorAll("input");
+
+    const childName = inputs[0].value;
+    const age = inputs[1].value;
+    const parentName = inputs[2].value;
+    const phone = inputs[3].value;
+
+
+    const message = 
+`⚽ تسجيل جديد في أكاديمية أبطال المستقبل
+
+👦 اسم الطفل: ${childName}
+
+🎂 العمر: ${age}
+
+👨 اسم ولي الأمر: ${parentName}
+
+📱 رقم الهاتف: ${phone}`;
+
+
+    const myNumber = "01225993704"; // ضع رقم واتساب الأكاديمية هنا
+
+
+    const whatsappLink = 
+    `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
+
+
+    window.open(whatsappLink, "_blank");
+
+
+    form.reset();
+
+});
